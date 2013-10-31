@@ -52,7 +52,7 @@ namespace JiraToBitbucketTests.Services
         {
             var loader = new FileLoaderService("C:/Users/marc.costello/Documents/Visual Studio 2012/Projects/JiraToBitBucket/jira_export_invalid.xml");
 
-            Should.Throw<FileLoadException>(loader.LoadFile);
+            Should.Throw<FileLoadException>(() => loader.LoadFile());
         }
 
         [Test]

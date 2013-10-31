@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Xml;
-using JiraToBitBucket.Configuration;
 
 namespace JiraToBitBucket.Services
 {

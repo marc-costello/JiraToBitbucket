@@ -28,7 +28,7 @@ namespace JiraToBitBucket.Services
             return File.Exists(_filepath);
         }
 
-        public void LoadFile()
+        public FileLoaderService LoadFile()
         {
             byte[] buffer;
 
@@ -64,6 +64,8 @@ namespace JiraToBitBucket.Services
                     throw new FileLoadException("File is not a recognised Jira export file");
                 }
             }
+
+            return this;
         }
 
         public XmlDocument ParseJiraXml()

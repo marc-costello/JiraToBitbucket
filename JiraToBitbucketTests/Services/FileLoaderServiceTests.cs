@@ -40,14 +40,6 @@ namespace JiraToBitbucketTests.Services
         }
 
         [Test]
-        public static void LoadFile_ThrowExceptionIfFileCannotBeLoadedIntoMemory()
-        {
-            var loader = buildFileLoaderService(true);
-
-            
-        }
-
-        [Test]
         public static void LoadFile_ThrowExceptionIfXMLFileIsNotARecocognisedExportFromJira()
         {
             var loader = new FileLoaderService("C:/Users/marc.costello/Documents/Visual Studio 2012/Projects/JiraToBitBucket/jira_export_invalid.xml");
@@ -64,6 +56,15 @@ namespace JiraToBitbucketTests.Services
 
             loader.XmlData.ShouldNotBeEmpty();
             loader.XmlData.ShouldEndWith("</entity-engine-xml>");
+        }
+
+        [Test]
+        public static void LoaderHasAFileInfoPropertyFromPathString()
+        {
+            var loader = buildFileLoaderService(true);
+
+            loader.JiraXmlFile.ShouldBeTypeOf<FileInfo>();
+            loader.JiraXmlFile.ShouldNotBe(null);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using JiraToBitbucketTests.Static;
 using NUnit.Framework;
+using Shouldly;
 
 namespace JiraToBitbucketTests.Models.Bitbucket
 {
@@ -15,7 +16,7 @@ namespace JiraToBitbucketTests.Models.Bitbucket
 
             var json = doc.ToJson();
 
-            Debug.WriteLine(json);
+            json.ShouldNotBeEmpty();
         }
     }
 }

@@ -19,7 +19,8 @@ namespace JiraToBitBucket.Models.Bitbucket
         {
             var settings = new JsonSerializerSettings
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                NullValueHandling = NullValueHandling.Include
             };
 
             return JsonConvert.SerializeObject(this, settings);

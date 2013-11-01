@@ -48,8 +48,7 @@ namespace JiraToBitBucket
             var bitbucketDoc = converter.BuildBitbucketDocument();
 
             // Write out the Json result into a file
-            string fileName = loader.JiraXmlFile.Name.Replace(".xml",".json");
-            string jsonFilePath = loader.JiraXmlFile.Directory.FullName + "\\" + fileName;
+            string jsonFilePath = loader.JiraXmlFile.Directory.FullName + @"\db-1.0.json";
             using (var jsonFile = new FileStream(jsonFilePath, FileMode.OpenOrCreate,
                     FileAccess.ReadWrite))
             {

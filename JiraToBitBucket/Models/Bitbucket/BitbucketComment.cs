@@ -12,5 +12,7 @@ namespace JiraToBitBucket.Models.Bitbucket
         [JsonProperty("created_on")]
         public string CreatedOn { get; set; }
         public string Content { get; set; }
+        [JsonProperty("updated_on")]
+        public string UpdatedOn { get; set; }
     }
 }

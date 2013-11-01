@@ -30,7 +30,8 @@ namespace JiraToBitBucket.Services
                 bitBucketIssue.Content = jiraIssue.Description;
                 bitBucketIssue.CreatedOn = jiraIssue.CreatedOn.ToString("s", CultureInfo.InvariantCulture);
                 bitBucketIssue.ContentUpdatedOn = jiraIssue.CreatedOn.ToString("s", CultureInfo.InvariantCulture);
-                bitBucketIssue.Kind = MapperConfiguration.Type.Single(k => k.Value.Contains(jiraIssue.Type)).Key;
+                bitBucketIssue.UpdatedOn = jiraIssue.CreatedOn.ToString("s", CultureInfo.InvariantCulture);
+                bitBucketIssue.Kind = MapperConfiguration.Type.Single(k => k.Value.Contains(jiraIssue.Type)).Key ?? "bug";
                 bitBucketIssue.Priority = MapperConfiguration.Priority.Single(k => k.Value.Contains(jiraIssue.Priority)).Key;
                 bitBucketIssue.Status = MapperConfiguration.Status.Single(k => k.Value.Contains(jiraIssue.Status)).Key;
 

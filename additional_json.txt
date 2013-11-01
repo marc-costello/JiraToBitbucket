@@ -1,0 +1,16 @@
+"attachments": [], 
+    "logs": [], 
+    "meta": {
+        "default_assignee": "<bitbucket username>",
+        "default_component": "general", 
+        "default_kind": "bug", 
+        "default_milestone": null, 
+        "default_version": null
+    }, 
+    "components": [
+        {
+            "name": "general"
+        }
+    ], 
+    "milestones": [], 
+    "versions": []
